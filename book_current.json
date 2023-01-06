@@ -1,6 +1,6 @@
 {
   "title": "iOS逆向开发：iOSOpenDev开发插件",
-  "description": "介绍iOS逆向中如何用iOSOpenDev开发越狱插件tweak。先是对iOSOpenDev概览；然后介绍如何安装iOSOpenDev，涉及到常见问题和安装后确认安装成功；然后是普通的插件的开发流程，包括新建iOSOpenDev的Xcode项目、初始化项目的配置、写hook插件tweak代码、编译代码调试代码等；以及带UI界面的插件开发的流程；以及一些心得。",
+  "description": "介绍iOS逆向中如何用iOSOpenDev开发越狱插件tweak。先是对iOSOpenDev概览；然后介绍如何安装iOSOpenDev，涉及到常见问题和安装后确认安装成功；然后是普通的插件的开发流程，包括新建iOSOpenDev的Xcode项目、初始化项目的配置、写hook插件tweak代码、编译代码调试代码等；以及带UI界面的插件开发的流程，包括前提和目标、基本流程、使用效果、常见问题等；以及一些心得。",
   "pluginsConfig": {
     "github-buttons": {
       "buttons": [
