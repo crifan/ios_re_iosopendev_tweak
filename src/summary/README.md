@@ -27,10 +27,21 @@ TODO：
 * 【记录】研究XCode中clang编译mm文件的过程和编译参数
 * 【记录】深究为何此处XCode编译strcpy会报错No matching function for call to
 * 【未解决】把之前theos的tweak改机剩余功能移植到iOSOpenDev的XCode中
-* 【已解决】XCode中iOSOpenDev中修改control的Version版本号无效会被重置
 * 
 
 ---
+
+## control的Version版本号的改动会丢失
+
+* 现象：
+
+项目中的`.plist`中的`Version`的值，默认是`1.0-1`
+
+当想要去改动版本号，比如改为`2023.07.19.2126`，结果重新编译后，改动后的Version值丢失，又恢复到之前的默认值`1.0-1`了
+
+* 解决办法
+  * `TARGETS`->`Build Settings`->`User-Defined`->`iOSOpenDevUsePackageVersionPList`从（默认的）`YES`改为`NO`
+    * ![iosd_xcode_use_pkg_plist_no](../assets/img/iosd_xcode_use_pkg_plist_no.png)
 
 ## `.xm`文件和`.mm`文件
 
