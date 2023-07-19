@@ -54,7 +54,7 @@ iOS的app部分：
   * app
     * 实现用户UI界面
     * 选择配置，保存配置到配置文件
-      `* /var/mobile/Library/Preferences/MuJiaBaiHuo.plist`
+      `/var/mobile/Library/Preferences/MuJiaBaiHuo.plist`
   * tweak
     * 实现hook功能
     * 返回的值，根据配置文件中保存的值决定

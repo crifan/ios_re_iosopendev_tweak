@@ -18,6 +18,7 @@
 * 【已解决】iOSOpenDev设置SDK报错：File not found XCode Specifications iPhoneOSPackageTypes.xcspec
 * 【已解决】iOSOpenDev设置SDK报错：PrivateFramework directory not found XCode iPhoneOS15.0.sdk
 * 【已解决】用iOSOpenDev去开发带GUI图形界面的iOS的app和tweak插件集成在一起的插件deb包
+* 【已解决】iOS逆向：如何去hook一个进程而不是带包名的iOS的app
 * 
 * [iosOpenDev-install 失败官方wiki无法解决看这里（尝试有效） - PoloKey - 博客园 (cnblogs.com)](https://www.cnblogs.com/Keys/p/5364939.html)
 *  [zhangkn/knPrivateFrameworks: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/PrivateFrameworks (github.com)](https://github.com/zhangkn/knPrivateFrameworks)
