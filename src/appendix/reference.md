@@ -21,6 +21,9 @@
 * 【已解决】iOS逆向：如何去hook一个进程而不是带包名的iOS的app
 * 【已解决】XCode中iOSOpenDev中修改control的Version版本号无效会被重置
 * 【未解决】iOS逆向akd：新建iOSOpenDev的Xcode插件项目
+* 【已解决】iOSOpenDev的插件dylib注入iPhone11失败：mach-o file but is an incompatible architecture have arm64 need arm64e
+* 【已解决】寻找支持arm64e的libsubstrate.dylib
+* 【已解决】Xcode项目中引用新的libsubstrate.dylib无效：始终链接是旧的库文件
 * 
 * [iosOpenDev-install 失败官方wiki无法解决看这里（尝试有效） - PoloKey - 博客园 (cnblogs.com)](https://www.cnblogs.com/Keys/p/5364939.html)
 *  [zhangkn/knPrivateFrameworks: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/PrivateFrameworks (github.com)](https://github.com/zhangkn/knPrivateFrameworks)

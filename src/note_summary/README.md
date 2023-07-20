@@ -31,18 +31,6 @@ TODO：
 
 ---
 
-## control的Version版本号的改动会丢失
-
-* 现象：
-
-项目中的`.plist`中的`Version`的值，默认是`1.0-1`
-
-当想要去改动版本号，比如改为`2023.07.19.2126`，结果重新编译后，改动后的Version值丢失，又恢复到之前的默认值`1.0-1`了
-
-* 解决办法
-  * `TARGETS`->`Build Settings`->`User-Defined`->`iOSOpenDevUsePackageVersionPList`从（默认的）`YES`改为`NO`
-    * ![iosd_xcode_use_pkg_plist_no](../assets/img/iosd_xcode_use_pkg_plist_no.png)
-
 ## `.xm`文件和`.mm`文件
 
 TODO：
@@ -74,3 +62,19 @@ TODO：
 * 【已解决】给iOS的XCode项目中新增iOSOpenDev的Project Navigator的目录和文件
 * 【已解决】XCode项目中新增iOSOpenDev的Package目录到Target目录中
 * 【已解决】XCode中如何把libsubstrate.dylib动态库导入到Link Binary With Libraries
+
+## 如何卸载带UI的插件app
+
+* 通过Cydia去卸载已安装的（带UI界面的）插件tweak即可
+
+步骤：
+
+`Cydia`->`已安装`->`最近`->找到插件->进入详情页
+
+![cydia_installed_tweak](../assets/img/cydia_installed_tweak.png)
+
+点击右上角的`卸载`：
+
+![cydia_uninstall_tweak](../assets/img/cydia_uninstall_tweak.png)
+
+即可卸载掉插件。
