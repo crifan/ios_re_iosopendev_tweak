@@ -1,5 +1,6 @@
 # 参考资料
 
+* 【整理】iOS越狱插件开发工具：iOSOpenDev
 * 【已解决】把iOS的app和iOS的tweak插件打包成独立的deb安装包
 * 【已解决】把iOSOpenDev的tweak加app的deb文件安装到已越狱的iPhone中
 * 【已解决】如何把普通iOS的app的XCode项目和iOSOpenDev的Logos插件tweak集成到一起
@@ -24,10 +25,12 @@
 * 【已解决】iOSOpenDev的插件dylib注入iPhone11失败：mach-o file but is an incompatible architecture have arm64 need arm64e
 * 【已解决】寻找支持arm64e的libsubstrate.dylib
 * 【已解决】Xcode项目中引用新的libsubstrate.dylib无效：始终链接是旧的库文件
+* 【已解决】Mac M2 Max中iOSOpenDev编译报错：An empty identity is not valid when signing a binary for the product type Dynamic Library
 * 
 * [iosOpenDev-install 失败官方wiki无法解决看这里（尝试有效） - PoloKey - 博客园 (cnblogs.com)](https://www.cnblogs.com/Keys/p/5364939.html)
 *  [zhangkn/knPrivateFrameworks: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/PrivateFrameworks (github.com)](https://github.com/zhangkn/knPrivateFrameworks)
 * [iosopendev专用Specifications.zip](https://www.ianisme.com/download/201605/iosopendev%E4%B8%93%E7%94%A8Specifications.zip)
 * [越狱开发:用iosOpenDev配置越狱开发环境 编写第一个hello world_我的杯洗具的博客-CSDN博客](http://blog.csdn.net/u013583789/article/details/50396747)
 * [jackrex/FakeWeChatLoc: 手把手教你制作一款iOS越狱App (github.com)](https://github.com/jackrex/FakeWeChatLoc)
+* [ios - An empty identity is not valid when signing a binary for the product type 'Application' in xcode version 10.2 - Stack Overflow](https://stackoverflow.com/a/55963713/1616263)
 * 

@@ -16,6 +16,8 @@
   * [基本流程](ui_tweak_process/basic_process.md)
   * [使用效果](ui_tweak_process/usage_effect.md)
 * [常见问题](common_issue/README.md)
+  * [初始化环境](common_issue/env_init.md)
+  * [编译调试](common_issue/compile_debug.md)
 * [经验心得](note_summary/README.md)
 * [附录](appendix/README.md)
   * [参考资料](appendix/reference.md)

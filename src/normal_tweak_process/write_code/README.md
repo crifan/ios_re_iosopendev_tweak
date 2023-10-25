@@ -56,7 +56,7 @@ iOSOpenDev中的hook插件代码的逻辑是：
 
 比如此处仅用于演示的代码：
 
-![hook_test_code_xm](../assets/img/hook_test_code_xm.jpg)
+![hook_test_code_xm](../../assets/img/hook_test_code_xm.jpg)
 
 ```c
 #import <UIKit/UIKit.h>
@@ -92,3 +92,80 @@ iOSOpenDev中的hook插件代码的逻辑是：
 
 %end
 ```
+
+## 附录
+
+### iOS中常见的hook网络相关的请求
+
+核心代码：
+
+```objc
+static char* LastUpdate = "20231025_1524";
+
+#import "HookLogiOS.h"
+#import "CrifanLib.h"
+
+/*------------------------------------------------------------------------------
+ NSURLRequest
+------------------------------------------------------------------------------*/
+
+%hook NSURLRequest
+
++(instancetype)requestWithURL:(NSURL *)URL cachePolicy:(NSURLRequestCachePolicy)cachePolicy timeoutInterval:(NSTimeInterval)timeoutInterval{
+    iosLogInfo("URL=%{public}@, cachePolicy=%lu, timeoutInterval=%f", URL, (unsigned long)cachePolicy, timeoutInterval);
+    return %orig;
+}
+
++(instancetype)requestWithURL:(NSURL *)URL{
+    iosLogInfo("URL=%{public}@", URL);
+    return %orig;
+}
+
+%end
+
+/*------------------------------------------------------------------------------
+ NSHTTPURLResponse
+------------------------------------------------------------------------------*/
+
+%hook NSHTTPURLResponse
+
+-(NSHTTPURLResponse*)initWithURL:(NSURL *)url statusCode:(NSInteger)statusCode HTTPVersion:(NSString *)HTTPVersion headerFields:(NSDictionary<NSString *,NSString *> *)headerFields{
+    NSHTTPURLResponse* newUrlResp =  %orig;
+    iosLogInfo("url=%{public}@,statusCode=%ld,HTTPVersion=%@,headerFields=%{public}@ -> newUrlResp=%{public}@", url, statusCode, HTTPVersion, headerFields, newUrlResp);
+    return newUrlResp;
+}
+
+-(NSDictionary *)allHeaderFields{
+    NSURL* curUrl = [self URL];
+    NSDictionary* allHeader = %orig;
+
+    //    iosLogInfo("curUrl=%{public}@ : allHeader=%{public}@", curUrl, allHeader);
+    NSString* respUrlHeaderStr = [NSString stringWithFormat:@"NSHTTPURLResponse:allHeaderFields curUrl=%@ : allHeader=%@", curUrl, allHeader];
+    logPossibleLargeStr(respUrlHeaderStr);
+
+    return allHeader;
+}
+
+-(NSInteger)statusCode{
+    NSURL* curUrl = [self URL];
+    NSInteger respStatusCode = %orig;
+    iosLogInfo("respStatusCode=%ld : curUrl=%{public}@", respStatusCode, curUrl);
+    return respStatusCode;
+}
+
+%end
+
+/*==============================================================================
+ ctor
+==============================================================================*/
+
+%ctor {
+    iosLogInfo("%s: %s", LastUpdate, "HookWhatsApp ctor");
+}
+
+```
+
+* 注：
+  * 调用的`iosLogInfo`等函数，详见：
+    * https://github.com/crifan/crifanLib/blob/master/c/CrifanLib.h
+    * https://github.com/crifan/crifanLib/blob/master/iOS/HookLogiOS.h
