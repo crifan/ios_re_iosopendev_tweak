@@ -7,7 +7,7 @@
 * 新建`.xm`文件
   * 选中要新增文件所属的位置 -> 右键 -> `Add File`-> `iOS` -> `Other`->`Empty`->输入文件名：`yourFilename.xm` ->`Create`
 * 编译 -> 会生成对应`.mm`文件
-  * `Product`->`Build`
+  * （先`Product`->`Clean Build Folder`，再）`Product`->`Build`
     * 会从`yourFilename.xm`生成`yourFilename.mm`
 * 把`.mm`文件加到`Compile Sources`中
   * 右键-> `Add Files to {yourProjectName}` -> 选择（刚新生成的）`yourFilename.mm`
