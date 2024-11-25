@@ -7,7 +7,6 @@ TODO：
 * 
 * 【已解决】iOSOpenDev的XCode调试iPhone6报错：Unable to install The application could not be verified
 * 【已解决】XCode中删除掉User-Defined的自定义参数
-* 【已解决】XCode中删除用户自定义配置User-Defined中的 CODE_SIGNING_ALLOWED=NO
 * 
 * 【已解决】iOSOpenDev的XCode的iOS的tweak插件中实现ObjC的通用全局函数
 * 【已解决】iOSOpenDev的XCode的iOS插件运行报错：ImageLoaderMachO doModInitFunctions和_logosLocalInit
@@ -38,14 +37,8 @@ TODO：
 * 【已解决】Xcode中xm源码中无法看到和添加断点
 * 【已解决】iOSOpenDev的XCode中.xm文件包含.c中函数找不到报错：Undefined symbols for architecture arm64 referenced from
 * 【已解决】XCode的iOSOpenDev项目报错：Failed Logos Processor Could not open xm
-* 【已解决】iOSOpenDev的XCode中xm代码%hookf编译报错：Expected unqualified-id
 * 【已解决】iOSOpenDev的XCode中如何把Tweak的xm代码拆分成多个文件模块
 * 【未解决】iOSOpenDev的iosod的bug修复：Logos的预处理不支持group子目录中的xm文件
-
-### `.xm`文件
-
-* `.xm`文件，默认会被`Xcode`识别为`音频文件`
-  * 需要去改变文件类型为`Objective C`（或`Objective C++`）文件，再去显示为源代码
 
 #### 代码高亮
 

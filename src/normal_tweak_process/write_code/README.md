@@ -1,14 +1,5 @@
 # 写hook插件代码
 
-iOSOpenDev中的hook插件代码的逻辑是：
-
-* `.xm`：原始的hook插件的代码
-  * 写hook插件，是改动`.xm`文件
-    * 而不需要，也不应该改动`.mm`文件
-* `.mm`：从`.xm`自动（在`Buil`d后）自动生成的文件
-  * 后续真正编译的文件是`.mm`文件
-    * 可以在`Compiled Sources`中看到`.mm`文件（而不是`.xm`文件）
-
 新建`iOSOpenDev`的项目中的`.xm`文件（此处是`iOSBypassJailbreak.xm`）生成的默认代码，来自模板，一般是：
 
 ```c
@@ -54,6 +45,10 @@ iOSOpenDev中的hook插件代码的逻辑是：
 
 去删除掉，或注释掉，改为自己的hook的代码。
 
+## 附录
+
+### demo示例代码
+
 比如此处仅用于演示的代码：
 
 ![hook_test_code_xm](../../assets/img/hook_test_code_xm.jpg)
@@ -93,79 +88,14 @@ iOSOpenDev中的hook插件代码的逻辑是：
 %end
 ```
 
-## 附录
+### iOSOpenDevHookTemplate
 
-### iOS中常见的hook网络相关的请求
+关于iOSOpenDev中，对于典型的常见的iOS的ObjC类和其他native的C函数等，如何去写hook代码，可以参考，我已整理出完整的模板项目：
 
-核心代码：
-
-```objc
-static char* LastUpdate = "20231025_1524";
-
-#import "HookLogiOS.h"
-#import "CrifanLib.h"
-
-/*------------------------------------------------------------------------------
- NSURLRequest
-------------------------------------------------------------------------------*/
-
-%hook NSURLRequest
-
-+(instancetype)requestWithURL:(NSURL *)URL cachePolicy:(NSURLRequestCachePolicy)cachePolicy timeoutInterval:(NSTimeInterval)timeoutInterval{
-    iosLogInfo("URL=%{public}@, cachePolicy=%lu, timeoutInterval=%f", URL, (unsigned long)cachePolicy, timeoutInterval);
-    return %orig;
-}
-
-+(instancetype)requestWithURL:(NSURL *)URL{
-    iosLogInfo("URL=%{public}@", URL);
-    return %orig;
-}
-
-%end
-
-/*------------------------------------------------------------------------------
- NSHTTPURLResponse
-------------------------------------------------------------------------------*/
-
-%hook NSHTTPURLResponse
-
--(NSHTTPURLResponse*)initWithURL:(NSURL *)url statusCode:(NSInteger)statusCode HTTPVersion:(NSString *)HTTPVersion headerFields:(NSDictionary<NSString *,NSString *> *)headerFields{
-    NSHTTPURLResponse* newUrlResp =  %orig;
-    iosLogInfo("url=%{public}@,statusCode=%ld,HTTPVersion=%@,headerFields=%{public}@ -> newUrlResp=%{public}@", url, statusCode, HTTPVersion, headerFields, newUrlResp);
-    return newUrlResp;
-}
-
--(NSDictionary *)allHeaderFields{
-    NSURL* curUrl = [self URL];
-    NSDictionary* allHeader = %orig;
-
-    //    iosLogInfo("curUrl=%{public}@ : allHeader=%{public}@", curUrl, allHeader);
-    NSString* respUrlHeaderStr = [NSString stringWithFormat:@"NSHTTPURLResponse:allHeaderFields curUrl=%@ : allHeader=%@", curUrl, allHeader];
-    logPossibleLargeStr(respUrlHeaderStr);
-
-    return allHeader;
-}
-
--(NSInteger)statusCode{
-    NSURL* curUrl = [self URL];
-    NSInteger respStatusCode = %orig;
-    iosLogInfo("respStatusCode=%ld : curUrl=%{public}@", respStatusCode, curUrl);
-    return respStatusCode;
-}
-
-%end
-
-/*==============================================================================
- ctor
-==============================================================================*/
-
-%ctor {
-    iosLogInfo("%s: %s", LastUpdate, "HookWhatsApp ctor");
-}
-
-```
-
-* 注：
-  * 调用的`iosLogInfo`等函数，详见：
-    * https://github.com/crifan/crifanLib/blob/master/c/CrifanLib.h
-    * https://github.com/crifan/crifanLib/blob/master/iOS/HookLogiOS.h
+* https://github.com/crifan/iOSOpenDevHookTemplate
+  * hook_iOS_ObjC_CommonClass.xm
+    * https://github.com/crifan/iOSOpenDevHookTemplate/blob/main/iOSOpenDevHookTemplate/iOSOpenDevHookTemplate/hook_iOS_ObjC_CommonClass.xm
+  * hook_iOS_ObjC_specific.xm
+    * https://github.com/crifan/iOSOpenDevHookTemplate/blob/main/iOSOpenDevHookTemplate/iOSOpenDevHookTemplate/hook_iOS_ObjC_specific.xm
+  * hook_native_misc.xm
+    * https://github.com/crifan/iOSOpenDevHookTemplate/blob/main/iOSOpenDevHookTemplate/iOSOpenDevHookTemplate/hook_native_misc.xm

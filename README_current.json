@@ -1,6 +1,6 @@
 {
-  "latestVersion": "v1.2.1",
-  "lastUpdate": "20241122",
+  "latestVersion": "v1.6.0",
+  "lastUpdate": "20241125",
   "gitRepoName": "ios_re_iosopendev_tweak",
   "bookName": "iOS逆向开发：iOSOpenDev开发插件",
   "bookDescription": "介绍iOS逆向中如何用iOSOpenDev开发越狱插件tweak。先是对iOSOpenDev概览；然后介绍如何安装iOSOpenDev，以及安装后确认安装成功；然后是普通的插件的开发流程，包括新建iOSOpenDev的Xcode项目、初始化项目的配置，其中包括ssh免密登录、写hook插件tweak代码，包括如何新增文件、编译代码调试代码等；以及带UI界面的插件开发的流程，包括前提和目标、基本流程、使用效果、常见问题等；以及常见问题和一些经验心得；常见问题包括初始化环境方面的问题和编译调试方面的问题。"

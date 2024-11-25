@@ -26,6 +26,11 @@
 * 【已解决】寻找支持arm64e的libsubstrate.dylib
 * 【已解决】Xcode项目中引用新的libsubstrate.dylib无效：始终链接是旧的库文件
 * 【已解决】Mac M2 Max中iOSOpenDev编译报错：An empty identity is not valid when signing a binary for the product type Dynamic Library
+* 【已解决】XCode中删除用户自定义配置User-Defined中的 CODE_SIGNING_ALLOWED=NO
+* 【已解决】Mac中iOSOpenDev编译报错scp dest open /var/root/iOSOpenDevPackages/xxx.deb No such file or directory
+* 【已解决】iOSOpenDev的XCode中xm代码%hookf编译报错：Expected unqualified-id
+* 【已解决】Xcode中Logos插件hook代码编译报错：Expected unqualified-id
+* 【规避解决】Xcode中iOSOpenDev编译报错：Failed Logos Processor outputted Could not open sub folder xm
 * 
 * [iosOpenDev-install 失败官方wiki无法解决看这里（尝试有效） - PoloKey - 博客园 (cnblogs.com)](https://www.cnblogs.com/Keys/p/5364939.html)
 *  [zhangkn/knPrivateFrameworks: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/PrivateFrameworks (github.com)](https://github.com/zhangkn/knPrivateFrameworks)
