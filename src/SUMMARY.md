@@ -32,5 +32,6 @@
   * [mach-o incompatible arch arm64 arm64e](common_issue/macho_arch_arm64_arm64e.md)
   * [Failed Logos Processor Could not open xm](common_issue/failed_logos_processor_could_not_open_xm.md)
 * [经验心得](note_summary/README.md)
+* [相关教程和代码](related_repo_code/README.md)
 * [附录](appendix/README.md)
   * [参考资料](appendix/reference.md)
