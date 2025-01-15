@@ -33,7 +33,7 @@ An empty identity is not valid when signing a binary for the product type 'Dynam
 
 ### 思路1：禁用自动签名
 
-* `Xcode`->`Project`->`{YourProjectName}`->`Build Settings`->`User-Defined`->
+* `Xcode`->`PROJECT`->`{YourProjectName}`->`Build Settings`->`User-Defined`->
   * (点击左上角的`加号`=`➕`->`Add User-Defined Setting`)
     * ![xcode_build_settings_add_user_defined_string](../assets/img/xcode_build_settings_add_user_defined_string.png)
   * 新增选项:`CODE_SIGNING_ALLOWED`=`NO`
@@ -45,14 +45,18 @@ An empty identity is not valid when signing a binary for the product type 'Dynam
 
 ### 思路2：给Identity设置某个合适的值
 
-* `Xcode`->`Project`->`{YourProjectName}`->`Build Settings`->`Signing`->`Code Sign Identity`->设置为（`Automatic`中的）`Apple Development`
-  * ![code_sign_identity_apple_development](../assets/img/code_sign_identity_apple_development.png)
+* `Xcode`->`TARGETS`->`{YourProjectName}`->`Build Settings`->`Signing`
+  * 设置相关参数值
+    * `Code Sign Identity`设置为：（`Automatic`中的）`Apple Development`
+    * `Development Team`设置为：你自己的Apple开发者账号 = 此处是：`Mao Li`
+  * 效果图
+    * ![code_sign_identity_apple_development](../assets/img/code_sign_identity_apple_development.png)
 
 #### 不要设置Code Sign Identity为`Apple Development: xxx`
 
 此处之前设置了：
 
-* `Xcode`->`Project`->`{YourProjectName}`->`Build Settings`->`Signing`->`Code Sign Identity`->设置为（`Certificates in Keychain`中的）`Apple Development: Mao Li (UBFSP2P5PM)`
+* `Xcode`->`TARGETS`->`{YourProjectName}`->`Build Settings`->`Signing`->`Code Sign Identity`->设置为（`Certificates in Keychain`中的）`Apple Development: Mao Li (UBFSP2P5PM)`
   * ![identity_apple_development_somebody](../assets/img/identity_apple_development_somebody.png)
 
 结果会报错：
