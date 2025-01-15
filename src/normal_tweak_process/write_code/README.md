@@ -87,15 +87,3 @@
 
 %end
 ```
-
-### iOSOpenDevHookTemplate
-
-关于iOSOpenDev中，对于典型的常见的iOS的ObjC类和其他native的C函数等，如何去写hook代码，可以参考，我已整理出完整的模板项目：
-
-* https://github.com/crifan/iOSOpenDevHookTemplate
-  * hook_iOS_ObjC_CommonClass.xm
-    * https://github.com/crifan/iOSOpenDevHookTemplate/blob/main/iOSOpenDevHookTemplate/iOSOpenDevHookTemplate/hook_iOS_ObjC_CommonClass.xm
-  * hook_iOS_ObjC_specific.xm
-    * https://github.com/crifan/iOSOpenDevHookTemplate/blob/main/iOSOpenDevHookTemplate/iOSOpenDevHookTemplate/hook_iOS_ObjC_specific.xm
-  * hook_native_misc.xm
-    * https://github.com/crifan/iOSOpenDevHookTemplate/blob/main/iOSOpenDevHookTemplate/iOSOpenDevHookTemplate/hook_native_misc.xm
