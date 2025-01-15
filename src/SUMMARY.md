@@ -7,7 +7,6 @@
 * [普通的插件开发流程](normal_tweak_process/README.md)
   * [新建iOSOpenDev项目](normal_tweak_process/new_project.md)
   * [初始化项目配置](normal_tweak_process/init_config/README.md)
-    * [ssh免密登录](normal_tweak_process/ssh_no_pwd_login.md)
   * [搞懂.xm和.mm文件的逻辑](normal_tweak_process/xm_mm_logic/README.md)
     * [如何新增xm文件](normal_tweak_process/xm_mm_logic/new_xm_file.md)
   * [写hook插件代码](normal_tweak_process/write_code/README.md)
